@@ -1,11 +1,12 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        std::map<int, int> nums_map;
+        std::unordered_map<int, int> nums_map;
         
         for (int i = 0; i < nums.size(); i++) {
-            if (nums_map.count(target - nums[i]) > 0) {
-                return vector<int>{nums_map.at(target - nums[i]), i};
+            const auto it = nums_map.find(target - nums[i]);
+            if (it != nums_map.end()) {
+                return vector<int>{it->second, i};
             }
             nums_map.insert(std::pair<int, int>(nums[i], i));
         }
