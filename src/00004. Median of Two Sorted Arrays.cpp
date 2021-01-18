@@ -1,3 +1,6 @@
+/* 
+*	two_pointers: O(m+n)
+*/
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
@@ -27,3 +30,7 @@ public:
         }
     }
 };
+
+/*
+*	binary_search: O(log(min(m,n)))
+*/
